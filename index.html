@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YULIANG Technology - Premium SSP & Game Publishing</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; 
+            color: #e5e7eb;
+        }
+        .hero-background {
+            background-image: linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px border rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="flex-shrink-0 text-2xl font-black text-white tracking-tighter">
+                    YULIANG<span class="text-indigo-400">.</span>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#ssp" class="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-semibold transition">SSP Solutions</a>
+                        <a href="#games" class="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-semibold transition">Publishing</a>
+                        <a href="#about" class="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-semibold transition">About</a>
+                        <a href="#contact" class="bg-indigo-600 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-indigo-500 transition shadow-lg">Partner With Us</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 border-b border-gray-800 px-4 py-4 space-y-2">
+            <a href="#ssp" class="block text-gray-300 py-2">SSP Solutions</a>
+            <a href="#games" class="block text-gray-300 py-2">Publishing</a>
+            <a href="#about" class="block text-gray-300 py-2">About</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-background min-h-[85vh] flex items-center justify-center py-20">
+            <div class="text-center max-w-5xl px-6">
+                <h1 class="text-5xl sm:text-7xl font-black text-white mb-8 tracking-tight">
+                    Maximizing <span class="gradient-text">Yield</span> for the Modern Publisher.
+                </h1>
+                <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    YULIANG Technology provides an elite Supply-Side Platform (SSP) built by developers, for developers. We combine premium demand with intelligent mediation to scale your revenue.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="#ssp" class="bg-indigo-600 text-white font-bold py-4 px-10 rounded-xl text-lg shadow-xl hover:bg-indigo-500 transition transform hover:-translate-y-1">
+                        Explore SSP Solutions
+                    </a>
+                    <a href="#games" class="bg-gray-800 text-white font-bold py-4 px-10 rounded-xl text-lg shadow-xl hover:bg-gray-700 transition border border-gray-700">
+                        Game Publishing
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Primary Section: SSP (Publisher Focus) -->
+        <section id="ssp" class="py-24 lg:py-40 bg-white text-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-indigo-600 uppercase bg-indigo-50 rounded">CORE TECHNOLOGY</div>
+                        <h2 class="text-4xl sm:text-6xl font-black mb-8 tracking-tight">Advanced Yield Management</h2>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Our SSP is engineered to give publishers total control over their inventory. We connect you directly to the world's highest-paying DSPs and agencies while ensuring your user experience remains pristine.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-2 rounded-lg text-indigo-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-bold">First-Look Premium Demand</h4>
+                                    <p class="text-gray-500">Access exclusive brand campaigns that aren't available on open exchanges.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-2 rounded-lg text-indigo-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-xl font-bold">Lightweight SDK</h4>
+                                    <p class="text-gray-500">A single integration that won't bloat your app or slow down your game performance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <a href="#contact" class="bg-gray-900 text-white font-bold py-4 px-8 rounded-xl hover:bg-gray-800 transition">Contact Publisher Support</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 bg-gray-50 p-8 rounded-[2.5rem] border border-gray-100 shadow-inner">
+                        <div class="space-y-4">
+                            <!-- Feature Item -->
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-indigo-600 mb-1">Unified Header Bidding</h5>
+                                <p class="text-sm text-gray-500">Maximize competition for every single impression with our server-side bidding engine.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-indigo-600 mb-1">Granular Controls</h5>
+                                <p class="text-sm text-gray-500">Whitelist and blacklist categories, set price floors, and manage ad frequency with ease.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                                <h5 class="font-bold text-indigo-600 mb-1">Real-Time Reporting</h5>
+                                <p class="text-sm text-gray-500">Track eCPMs, Fill Rates, and Revenue in real-time across all your properties.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 bg-indigo-600 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-black mb-2">99.9%</div>
+                    <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">Fill Rate</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black mb-2">15ms</div>
+                    <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">Avg Latency</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black mb-2">200+</div>
+                    <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">Premium DSPs</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black mb-2">24/7</div>
+                    <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">Global Support</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Publishing Section -->
+        <section id="games" class="py-24 lg:py-40 bg-gray-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div class="max-w-2xl">
+                        <h2 class="text-4xl sm:text-6xl font-black text-white mb-6">Built by <span class="text-indigo-400">Gamers</span></h2>
+                        <p class="text-xl text-gray-400">We don't just provide tech; we build and publish games. Our firsthand experience as publishers is what makes our SSP the best in the industry.</p>
+                    </div>
+                    <a href="#" class="text-indigo-400 font-bold hover:text-indigo-300 transition">Explore Titles &rarr;</a>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="group relative overflow-hidden rounded-3xl">
+                        <img src="https://images.unsplash.com/photo-1552824730-cf51ab72421c?auto=format&fit=crop&q=80&w=1200" alt="Action Game" class="w-full h-[400px] object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent flex items-end p-10">
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">Aether Velocity</h3>
+                                <p class="text-gray-300">Fast-paced competitive racing with millions of active users.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-3xl">
+                        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=1200" alt="RPG Game" class="w-full h-[400px] object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent flex items-end p-10">
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-2">Pixel Legends</h3>
+                                <p class="text-gray-300">The #1 casual strategy game utilizing YULIANG SSP tech.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/Culture -->
+        <section id="about" class="py-24 bg-white text-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-6">The YULIANG Advantage</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        YULIANG Technology was born from the need for a more transparent, efficient, and publisher-friendly monetization engine. Having published over a dozen successful titles, we knew that traditional SSPs were too complex and often favored the buyer.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Our platform is designed to reverse that trend, putting the power back into the hands of the content creators. We believe that when publishers win, the entire ecosystem thrives.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <span class="block text-2xl font-bold text-indigo-600">10B+</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase">Monthly Auctions</span>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <span class="block text-2xl font-bold text-indigo-600">50+</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase">Global Countries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800" alt="Technology Hub" class="rounded-[2.5rem] shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl border border-gray-200 shadow-xl hidden md:block">
+                        <p class="text-sm font-bold text-gray-800">"The highest eCPMs we've seen in 5 years."</p>
+                        <p class="text-xs text-gray-500 mt-1">— Top Tier Mobile Publisher</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Footer CTA -->
+        <section id="contact" class="py-24 bg-gray-950">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-6xl font-black text-white mb-8">Ready to Scale?</h2>
+                <p class="text-xl text-gray-400 mb-12">Join hundreds of publishers already using YULIANG SSP to power their growth.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:partners@yuliang.tech" class="bg-indigo-600 text-white font-black py-4 px-10 rounded-xl hover:bg-indigo-500 transition">Contact Partnership Team</a>
+                    <a href="#" class="bg-white text-gray-900 font-black py-4 px-10 rounded-xl hover:bg-gray-100 transition">Request Developer Docs</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-950 py-12 border-t border-gray-900 text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-black text-white">YULIANG<span class="text-indigo-400">.</span></div>
+            <div class="flex space-x-8">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+            </div>
+            <p>&copy; 2026 YULIANG Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
