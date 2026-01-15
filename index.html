@@ -27,7 +27,17 @@
         .glass-panel {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
-            border: 1px border rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Modal Animation */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 300ms, transform 300ms;
         }
     </style>
 </head>
@@ -45,7 +55,7 @@
                         <a href="#ssp" class="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-semibold transition">SSP Solutions</a>
                         <a href="#games" class="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-semibold transition">Publishing</a>
                         <a href="#about" class="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-semibold transition">About</a>
-                        <a href="#contact" class="bg-indigo-600 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-indigo-500 transition shadow-lg">Partner With Us</a>
+                        <button onclick="openModal()" class="bg-indigo-600 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-indigo-500 transition shadow-lg">Partner With Us</button>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -59,6 +69,7 @@
             <a href="#ssp" class="block text-gray-300 py-2">SSP Solutions</a>
             <a href="#games" class="block text-gray-300 py-2">Publishing</a>
             <a href="#about" class="block text-gray-300 py-2">About</a>
+            <button onclick="openModal()" class="block w-full text-left text-indigo-400 font-bold py-2">Partner With Us</button>
         </div>
     </header>
 
@@ -70,15 +81,15 @@
                     Maximizing <span class="gradient-text">Yield</span> for the Modern Publisher.
                 </h1>
                 <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-                    YULIANG Technology provides an elite Supply-Side Platform (SSP) built by developers, for developers. We combine premium demand with intelligent mediation to scale your revenue.
+                    YULIANG Technology provides an elite Supply-Side Platform (SSP) for publishers. We combine premium demand with intelligent mediation to scale your revenue.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
                     <a href="#ssp" class="bg-indigo-600 text-white font-bold py-4 px-10 rounded-xl text-lg shadow-xl hover:bg-indigo-500 transition transform hover:-translate-y-1">
                         Explore SSP Solutions
                     </a>
-                    <a href="#games" class="bg-gray-800 text-white font-bold py-4 px-10 rounded-xl text-lg shadow-xl hover:bg-gray-700 transition border border-gray-700">
-                        Game Publishing
-                    </a>
+                    <button onclick="openModal()" class="bg-gray-800 text-white font-bold py-4 px-10 rounded-xl text-lg shadow-xl hover:bg-gray-700 transition border border-gray-700">
+                        Become a Partner
+                    </button>
                 </div>
             </div>
         </section>
@@ -91,7 +102,7 @@
                         <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-widest text-indigo-600 uppercase bg-indigo-50 rounded">CORE TECHNOLOGY</div>
                         <h2 class="text-4xl sm:text-6xl font-black mb-8 tracking-tight">Advanced Yield Management</h2>
                         <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                            Our SSP is engineered to give publishers total control over their inventory. We connect you directly to the world's highest-paying DSPs and agencies while ensuring your user experience remains pristine.
+                            Our SSP is engineered to give publishers maximum revenue opportunities over their inventory. We connect you directly to the world's highest-paying DSPs and agencies while ensuring your user experience remains pristine.
                         </p>
                         
                         <div class="space-y-6">
@@ -100,8 +111,8 @@
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="text-xl font-bold">First-Look Premium Demand</h4>
-                                    <p class="text-gray-500">Access exclusive brand campaigns that aren't available on open exchanges.</p>
+                                    <h4 class="text-xl font-bold">Real-Time Monetization Strategy</h4>
+                                    <p class="text-gray-500">Let machine learning do the work — our platform automatically optimizes your maximum revenue for you.</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -109,22 +120,21 @@
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="text-xl font-bold">Lightweight SDK</h4>
-                                    <p class="text-gray-500">A single integration that won't bloat your app or slow down your game performance.</p>
+                                    <h4 class="text-xl font-bold">Lightweight Integration</h4>
+                                    <p class="text-gray-500">A single integration via API or SDK that won't bloat your app or slow down your game performance.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="mt-12">
-                            <a href="#contact" class="bg-gray-900 text-white font-bold py-4 px-8 rounded-xl hover:bg-gray-800 transition">Contact Publisher Support</a>
+                            <button onclick="openModal()" class="bg-gray-900 text-white font-bold py-4 px-8 rounded-xl hover:bg-gray-800 transition">Contact Publisher Support</button>
                         </div>
                     </div>
                     <div class="lg:w-1/2 bg-gray-50 p-8 rounded-[2.5rem] border border-gray-100 shadow-inner">
                         <div class="space-y-4">
-                            <!-- Feature Item -->
                             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                                <h5 class="font-bold text-indigo-600 mb-1">Unified Header Bidding</h5>
-                                <p class="text-sm text-gray-500">Maximize competition for every single impression with our server-side bidding engine.</p>
+                                <h5 class="font-bold text-indigo-600 mb-1">Optimized Bidding</h5>
+                                <p class="text-sm text-gray-500">Maximize competition for every single impression with our intelligent bidding engine.</p>
                             </div>
                             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                                 <h5 class="font-bold text-indigo-600 mb-1">Granular Controls</h5>
@@ -234,12 +244,47 @@
                 <h2 class="text-4xl sm:text-6xl font-black text-white mb-8">Ready to Scale?</h2>
                 <p class="text-xl text-gray-400 mb-12">Join hundreds of publishers already using YULIANG SSP to power their growth.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="mailto:partners@yuliang.tech" class="bg-indigo-600 text-white font-black py-4 px-10 rounded-xl hover:bg-indigo-500 transition">Contact Partnership Team</a>
+                    <button onclick="openModal()" class="bg-indigo-600 text-white font-black py-4 px-10 rounded-xl hover:bg-indigo-500 transition">Contact Partnership Team</button>
                     <a href="#" class="bg-white text-gray-900 font-black py-4 px-10 rounded-xl hover:bg-gray-100 transition">Request Developer Docs</a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Modal Form -->
+    <div id="partnerModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div id="modalContent" class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden text-gray-900 transition-all duration-300 scale-95 opacity-0">
+            <div class="p-8 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+                <h3 class="text-2xl font-black tracking-tight">Partner with <span class="text-indigo-600">YULIANG</span></h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path></svg>
+                </button>
+            </div>
+            <form id="contactForm" class="p-8 space-y-5">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Full Name</label>
+                    <input type="text" name="name" required placeholder="Enter your name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Company Name</label>
+                    <input type="text" name="company" required placeholder="Your business name" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Email Address</label>
+                    <input type="email" name="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Short Comment</label>
+                    <textarea name="comment" required rows="3" placeholder="Tell us about your project..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white font-black py-4 rounded-xl hover:bg-indigo-500 transition shadow-lg shadow-indigo-200">
+                    Send Inquiry
+                </button>
+                <p id="successMessage" class="hidden text-center text-green-600 font-bold text-sm">Thank you! Our team will contact you soon.</p>
+                <p id="errorMessage" class="hidden text-center text-red-600 font-bold text-sm">Error sending message. Please try again.</p>
+            </form>
+        </div>
+    </div>
 
     <footer class="bg-gray-950 py-12 border-t border-gray-900 text-gray-500 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
@@ -254,9 +299,70 @@
     </footer>
 
     <script>
+        const modal = document.getElementById('partnerModal');
+        const modalContent = document.getElementById('modalContent');
+        const contactForm = document.getElementById('contactForm');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwxSRUTNQoCeG24MP-vmTY4e1iW4t-doYzPeSIF4kXVkGwKbx7_6m0yKOf3l1wF5wOv/exec';
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalContent.classList.add('scale-95', 'opacity-0');
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                successMsg.classList.add('hidden');
+                errorMsg.classList.add('hidden');
+                contactForm.reset();
+            }, 300);
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            const formData = new FormData(contactForm);
+
+            fetch(scriptURL, { 
+                method: 'POST', 
+                body: formData 
+            })
+            .then(response => {
+                successMsg.classList.remove('hidden');
+                submitBtn.innerHTML = 'Message Sent!';
+                setTimeout(closeModal, 2500);
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                errorMsg.classList.remove('hidden');
+                submitBtn.innerHTML = 'Retry';
+                submitBtn.disabled = false;
+            });
+        });
+
         document.getElementById('mobile-menu-button').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
