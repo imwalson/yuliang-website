@@ -37,6 +37,14 @@
         .game-card:hover .game-card-blur {
             filter: blur(2px) grayscale(0%);
         }
+        /* New interaction style for clickable cards */
+        .clickable-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .clickable-card:hover {
+            transform: scale(1.05);
+            border-color: #6366f1;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -195,15 +203,18 @@
                             <p class="text-gray-300 text-sm">Multiplayer Casual</p>
                         </div>
                     </div>
-                    <!-- Game 3 -->
-                    <div class="group game-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800">
+                    <!-- Game 3: Royal Spider Solitaire (Updated Link) -->
+                    <a href="https://yuliang.net/spider-solitaire/index.html" class="group game-card clickable-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800 block">
                         <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800" alt="Card Game" class="w-full h-[300px] object-cover game-card-blur">
-                        <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
-                            <span class="mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full">Coming Soon</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">Royal Solitaire</h3>
-                            <p class="text-gray-300 text-sm">Casual Card</p>
+                        <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center transition-all group-hover:bg-black/20">
+                            <span class="mb-4 px-4 py-1 bg-emerald-500 text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg">Play Demo</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Royal Spider Solitaire</h3>
+                            <p class="text-gray-300 text-sm">Casual Card Game</p>
+                            <div class="mt-4 flex items-center text-indigo-400 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                                Click to Play <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- Game 4 -->
                     <div class="group game-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800">
                         <img src="https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&q=80&w=800" alt="Merge Game" class="w-full h-[300px] object-cover game-card-blur">
