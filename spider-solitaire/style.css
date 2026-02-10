@@ -37,15 +37,6 @@ body {
     flex-direction: column;
 }
 
-/* 左上角发牌堆容器 */
-/*
-#stock-container {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    z-index: 100;
-}
-*/
 /* 1. 发牌堆：移动到右下角 */
 #stock-container {
     position: fixed;
@@ -73,14 +64,11 @@ body {
     user-select: none;
 }
 
-/* 核心：10列牌堆的容器 */
-/* #columns-container {
-/*     display: flex;
-/*     justify-content: center;
-/*     gap: 15px;
-/*     margin-top: 150px; /* 给发牌堆留出位置 */
-/*     height: 100%;
-/* }
+/* 增加一个简单的发牌堆抖动反馈 */
+#stock-pile:active {
+    transform: scale(0.95);
+}
+
 /* 3. 核心列：往上移动 */
 #columns-container {
     display: flex;
@@ -96,6 +84,10 @@ body {
     background: rgba(255, 255, 255, 0.05); /* 淡淡的槽位感 */
     border-radius: 6px;
     position: relative;
+    z-index: 1;
+}
+.column:focus-within, .column:hover {
+    z-index: 10; /* 悬停或操作时提升层级 */
 }
 
 /* 每一张牌的基本样式 */
@@ -109,6 +101,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     user-select: none;
     transition: transform 0.1s;
+    box-sizing: boarder-box;
 }
 
 /* 红色花色的牌面颜色 */
@@ -157,7 +150,7 @@ body {
 .card-complete-animation {
     z-index: 9999 !important;
     pointer-events: none !important;
-    animation: complete-set-glow 0.4s ease-in-out forwards !important;
+    animation: complete-set-glow 0.5s ease-in-out forwards !important;
 }
 
 @keyframes complete-set-glow {
@@ -166,13 +159,20 @@ body {
         filter: brightness(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.1); /* 闪烁放大 */
         filter: brightness(1.8) drop-shadow(0 0 15px gold);
     }
     100% {
-        transform: scale(0);
-        opacity: 0;
+        transform: scale(1.05); /* 停留在轻微放大状态，准备飞行 */
+        filter: brightness(1.2) drop-shadow(0 0 10px gold);
     }
+}
+
+/* 飞往收牌区的过渡类 */
+.flying-to-slot {
+    position: fixed !important;
+    transition: all 0.6s cubic-bezier(0.5, 0, 0.5, 1) !important;
+    z-index: 10000 !important;
 }
 
 /* 状态栏样式 */
@@ -249,17 +249,6 @@ body {
 .new-game-btn:hover { background: #27ae60; }
 
 
-/* 收牌槽 */
-/* 修改后的收牌槽容器 */
-/* #completed-container {
-/*     position: fixed; /* 改为 fixed 确保它永远在最上层，不受 flex 布局干扰 */
-/*     left: 20px;      /* 靠左显示 */
-/*     bottom: 20px;    /* 靠底部显示 */
-/*     display: flex;
-/*     gap: 8px;        /* 稍微收紧一点间距 */
-/*     z-index: 1000;   /* 确保在所有牌的下面，但在桌布上面 */
-/* }
-
 /* 2. 收牌槽：保持在左下角（确保是 fixed） */
 #completed-container {
     position: fixed;
@@ -322,4 +311,48 @@ body {
 
 .collecting {
     animation: collect-glow 0.4s ease-in-out;
+}
+
+.victory-card {
+    position: fixed;
+    z-index: 10001;
+    pointer-events: none;
+    width: 80px;
+    height: 110px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+
+/* 晃动动画 */
+@keyframes error-shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+
+/* 专门给发牌堆准备的类 */
+.shake-warning {
+    animation: error-shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* 死局专用的剧烈震动 */
+@keyframes intense-shake {
+    0%, 100% { transform: translate(0, 0); }
+    10%, 30%, 50%, 70%, 90% { transform: translate(-10px, -5px); }
+    20%, 40%, 60%, 80% { transform: translate(10px, 5px); }
+}
+
+.shake-death {
+    animation: intense-shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* 确保内容框有基础样式（如果还没写的话） */
+.game-over-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 3px solid #ff4444; /* 红色边框增强警告感 */
 }
