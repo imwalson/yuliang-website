@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Memory Card Match</title>
+    <style>
+        /* 页面整体样式 */
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f0f2f5; }
+        
+        /* 游戏看板 */
+        .stats { margin: 20px; font-size: 20px; }
+        
+        /* 游戏网格布局 */
+        .game-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 80px); /* 4列 */
+            grid-gap: 10px; 
+        }
+
+        /* 单个卡片样式 */
+	.card {
+    		width: 100px;  /* 你可以根据屏幕大小调整，比如 80px 或 100px */
+    		height: 100px; /* 必须与宽度一致，保持正方形 */
+    		background-color: #2e7d32; 
+    		color: white;
+    		display: flex; 
+    		align-items: center; 
+    		justify-content: center;
+    		font-size: 40px; 
+    		cursor: pointer;
+    		border-radius: 8px; 
+    		user-select: none;
+    		transition: transform 0.3s;
+    		overflow: hidden; /* 确保图片超出部分被隐藏 */
+	}
+
+	/* 确保 292x292 的图片完美适配 */
+	.card img {
+    		width: 100%;
+    		height: 100%;
+    	/* object-fit: cover 保证图片填满格子且不变形 */
+    		object-fit: cover; 
+    		display: block;
+	}
+
+        /* 翻开后的样式 */
+        .card.flipped {
+            background-color: #ffffff; /* 翻开后的背景色 */
+            color: #000;
+            transform: rotateY(180deg);
+        }
+	
+	/* 调整网格布局，确保 4 列都能放下 */
+	.game-grid { 
+    		display: grid; 
+    		grid-template-columns: repeat(4, 100px); /* 这里的 100px 要和 .card 的宽度一致 */
+    		grid-gap: 10px; 
+	}
+
+        /* 匹配成功的样式 */
+        .card.matched {
+            background-color: #e0e0e0;
+            visibility: visible; /* 也可以设置为 hidden 让卡片消失 */
+            cursor: default;
+        }
+
+        button { margin-top: 20px; padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="stats">Steps: <span id="moves">0</span></div>
+    
+    <div class="game-grid" id="grid">
+        </div>
+
+    <button onclick="resetGame()">Restart</button>
+	<audio id="flipSound" src="https://www.myinstants.com/media/sounds/page-flip-01a.mp3"></audio>
+	<audio id="matchSound" src="https://www.myinstants.com/media/sounds/meow-1.mp3"></audio>
+	<audio id="winSound" src="https://www.myinstants.com/media/sounds/happy-happy-happy-cat.mp3"></audio>
+
+    <script>
+        // 【核心配置】：在这里更换你的元素
+        // 如果想换成图片，可以将这些 Emoji 换成图片的 URL 地址
+        const cardValues = [
+    		'<img src="./cat1.png">', 
+    		'<img src="./cat2.png">', 
+    		'<img src="./cat3.png">', 
+    		'<img src="./cat4.png">', 
+    		'<img src="./cat5.png">', 
+    		'<img src="./cat6.png">', 
+    		'<img src="./cat7.png">', 
+    		'<img src="./cat8.png">'
+			];
+        let cards = [...cardValues, ...cardValues]; // 成对出现
+        let flippedCards = [];
+        let matchedCount = 0;
+        let moves = 0;
+
+        const grid = document.getElementById('grid');
+        const movesDisplay = document.getElementById('moves');
+
+        // 洗牌算法
+        function shuffle(array) {
+            array.sort(() => Math.random() - 0.5);
+        }
+
+        // 初始化游戏
+        function initGame() {
+            grid.innerHTML = '';
+            shuffle(cards);
+            cards.forEach((value, index) => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.value = value;
+                card.dataset.index = index;
+                card.innerHTML = '?'; // 初始显示问号
+                card.addEventListener('click', flipCard);
+                grid.appendChild(card);
+            });
+        }
+
+        // 翻牌逻辑
+        function flipCard() {
+            if (flippedCards.length < 2 && !this.classList.contains('flipped')) {
+		document.getElementById('flipSound').play();
+                this.classList.add('flipped');
+                this.innerHTML = this.dataset.value; // 显示内容
+                flippedCards.push(this);
+
+                if (flippedCards.length === 2) {
+                    moves++;
+                    movesDisplay.innerText = moves;
+                    checkMatch();
+                }
+            }
+        }
+
+        // 检查是否匹配
+	function checkMatch() {
+    		const [card1, card2] = flippedCards;
+
+    		if (card1.dataset.value === card2.dataset.value) {
+        	// 1. 播放配对成功的声音 (Oiia Oiia)
+        	const matchAudio = document.getElementById('matchSound');
+        	matchAudio.currentTime = 0;
+       		matchAudio.play();
+
+        	card1.classList.add('matched');
+        	card2.classList.add('matched');
+        	matchedCount += 2;
+        	flippedCards = []; // 配对成功，清空当前翻开的牌数组
+
+        	// 2. 核心判断：是否全部找齐
+        	if (matchedCount === cards.length) {
+            	// 延迟一点点播放，避免和最后一次配对音撞在一起
+            	setTimeout(() => {
+                // 播放赢球音效
+                const winAudio = document.getElementById('winSound');
+                if (winAudio) {
+                    winAudio.currentTime = 0;
+                    winAudio.play();
+                }
+                
+                // 弹出提示框
+                alert('Congrats！You found all cats！Total Steps：' + moves);
+            }, 500); 
+        }
+
+    } else {
+        // 3. 不匹配的情况：1秒后翻回去
+        setTimeout(() => {
+            card1.classList.remove('flipped');
+            card1.innerHTML = '?'; // 如果你之前换成了图片，这里记得也要改回卡背图
+            card2.classList.remove('flipped');
+            card2.innerHTML = '?';
+            flippedCards = [];
+        }, 1000);
+    }
+}
+        function resetGame() {
+            moves = 0;
+            matchedCount = 0;
+            movesDisplay.innerText = moves;
+            flippedCards = [];
+            initGame();
+        }
+
+        initGame();
+    </script>
+</body>
+</html>
