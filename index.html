@@ -37,7 +37,7 @@
         .game-card:hover .game-card-blur {
             filter: blur(2px) grayscale(0%);
         }
-        /* New interaction style for clickable cards */
+        /* Interaction style for clickable cards */
         .clickable-card {
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -100,7 +100,7 @@
             </div>
         </section>
 
-        <!-- Primary Section: SSP (Publisher Focus) -->
+        <!-- SSP Section -->
         <section id="ssp" class="py-24 lg:py-40 bg-white text-gray-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-16">
@@ -156,24 +156,6 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="py-20 bg-indigo-600 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                    <div class="text-4xl md:text-5xl font-black mb-2">15ms</div>
-                    <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">Avg Latency</div>
-                </div>
-                <div>
-                    <div class="text-4xl md:text-5xl font-black mb-2">50+</div>
-                    <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">Premium Demand Partners</div>
-                </div>
-                <div>
-                    <div class="text-4xl md:text-5xl font-black mb-2">24/7</div>
-                    <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">Global Support</div>
-                </div>
-            </div>
-        </section>
-
         <!-- Game Publishing Section -->
         <section id="games" class="py-24 lg:py-40 bg-gray-950">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -185,61 +167,33 @@
                 </div>
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Game 1 -->
+                    <!-- Game 1: Royal Spider Solitaire -->
+                    <a href="https://yuliang.net/spider-solitaire/index.html?v=20260210" class="group game-card clickable-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800 block">
+                        <img src="https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&q=80&w=800" alt="Playing Cards" class="w-full h-[300px] object-cover game-card-blur">
+                        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-6 text-center transition-all group-hover:bg-black/30">
+                            <span class="mb-4 px-4 py-1 bg-emerald-500 text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg">Play Demo</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Royal Spider Solitaire</h3>
+                            <p class="text-gray-300 text-sm">Classic Spider Card Game</p>
+                        </div>
+                    </a>
+
+                    <!-- Game 2: Meowmory Card Match -->
+                    <a href="https://yuliang.net/meowmory-card-match/index.html?v=20260210" class="group game-card clickable-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800 block">
+                        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&q=80&w=800" alt="Cartoon Cat Illustration" class="w-full h-[300px] object-cover game-card-blur">
+                        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-6 text-center transition-all group-hover:bg-black/30">
+                            <span class="mb-4 px-4 py-1 bg-emerald-500 text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg">Play Demo</span>
+                            <h3 class="text-2xl font-bold text-white mb-1">Meowmory Card Match</h3>
+                            <p class="text-gray-300 text-sm">Cards with Cats</p>
+                        </div>
+                    </a>
+
+                    <!-- Game 3: Octopus Match-3 -->
                     <div class="group game-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1614294149010-950b698f72c0?auto=format&fit=crop&q=80&w=800" alt="Puzzle Game" class="w-full h-[300px] object-cover game-card-blur">
+                        <img src="https://images.unsplash.com/photo-1614294149010-950b698f72c0?auto=format&fit=crop&q=80&w=800" alt="Cartoon Octopus" class="w-full h-[300px] object-cover game-card-blur">
                         <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
                             <span class="mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full">Coming Soon</span>
                             <h3 class="text-2xl font-bold text-white mb-1">Octopus Match-3</h3>
                             <p class="text-gray-300 text-sm">Casual Match-3</p>
-                        </div>
-                    </div>
-                    <!-- Game 2 -->
-                    <div class="group game-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?auto=format&fit=crop&q=80&w=800" alt="Rock Paper Scissors" class="w-full h-[300px] object-cover game-card-blur">
-                        <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
-                            <span class="mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full">Coming Soon</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">Catch you! - Rock Paper Scissors</h3>
-                            <p class="text-gray-300 text-sm">Multiplayer Casual</p>
-                        </div>
-                    </div>
-                    <!-- Game 3: Royal Spider Solitaire (Updated Link) -->
-                    <a href="https://yuliang.net/spider-solitaire/index.html?v=20260210" class="group game-card clickable-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800 block">
-                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800" alt="Card Game" class="w-full h-[300px] object-cover game-card-blur">
-                        <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center transition-all group-hover:bg-black/20">
-                            <span class="mb-4 px-4 py-1 bg-emerald-500 text-white text-xs font-black uppercase tracking-widest rounded-full shadow-lg">Play Demo</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">Royal Spider Solitaire</h3>
-                            <p class="text-gray-300 text-sm">Casual Card Game</p>
-                            <div class="mt-4 flex items-center text-indigo-400 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                                Click to Play <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- Game 4 -->
-                    <div class="group game-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&q=80&w=800" alt="Merge Game" class="w-full h-[300px] object-cover game-card-blur">
-                        <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
-                            <span class="mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full">Coming Soon</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">Bloom Merge</h3>
-                            <p class="text-gray-300 text-sm">Strategy Casual</p>
-                        </div>
-                    </div>
-                    <!-- Game 5 -->
-                    <div class="group game-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800" alt="Bubble Game" class="w-full h-[300px] object-cover game-card-blur">
-                        <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
-                            <span class="mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full">Coming Soon</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">Aqua Pop</h3>
-                            <p class="text-gray-300 text-sm">Bubble Shooter</p>
-                        </div>
-                    </div>
-                    <!-- Game 6 -->
-                    <div class="group game-card relative overflow-hidden rounded-3xl bg-gray-900 border border-gray-800">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800" alt="Trivia Game" class="w-full h-[300px] object-cover game-card-blur">
-                        <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-6 text-center">
-                            <span class="mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-full">Coming Soon</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">Mind Master</h3>
-                            <p class="text-gray-300 text-sm">Trivia & Quiz</p>
                         </div>
                     </div>
                 </div>
@@ -252,10 +206,7 @@
                 <div>
                     <h2 class="text-4xl font-black mb-6">The YULIANG Advantage</h2>
                     <p class="text-lg text-gray-600 mb-6">
-                        YULIANG Technology was born from the need for a more transparent, efficient, and publisher-friendly monetization engine. Members experinced published over a dozen successful titles including games and non-game apps, as a publisher, we knew that traditional SSPs were too complex.
-                    </p>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Our platform is designed to reverse that trend, putting the power back into the hands of the content creators. We believe that when publishers win, the entire ecosystem thrives.
+                        YULIANG Technology was born from the need for a more transparent, efficient, and publisher-friendly monetization engine. We have published over a dozen successful titles, giving us unique insights into the publisher journey.
                     </p>
                     <div class="flex gap-4">
                         <div class="p-4 bg-gray-50 rounded-xl">
@@ -269,24 +220,16 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800" alt="Technology Hub" class="rounded-[2.5rem] shadow-2xl">
-                    <div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl border border-gray-200 shadow-xl hidden md:block">
-                        <p class="text-sm font-bold text-gray-800">"The highest eCPMs we've seen in 5 years."</p>
-                        <p class="text-xs text-gray-500 mt-1">— Top Tier Mobile Publisher</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800" alt="Tech Hub" class="rounded-[2.5rem] shadow-2xl">
                 </div>
             </div>
         </section>
 
-        <!-- Contact/Footer CTA -->
+        <!-- Footer CTA -->
         <section id="contact" class="py-24 bg-gray-950">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl sm:text-6xl font-black text-white mb-8">Ready to Scale?</h2>
-                <p class="text-xl text-gray-400 mb-12">Join hundreds of publishers already using YULIANG SSP to power their growth.</p>
-                <div class="flex flex-col sm:row justify-center gap-4">
-                    <button onclick="openModal()" class="bg-indigo-600 text-white font-black py-4 px-10 rounded-xl hover:bg-indigo-500 transition">Contact Partnership Team</button>
-                    <a href="#" class="bg-white text-gray-900 font-black py-4 px-10 rounded-xl hover:bg-gray-100 transition">Request Developer Docs</a>
-                </div>
+                <button onclick="openModal()" class="bg-indigo-600 text-white font-black py-4 px-10 rounded-xl hover:bg-indigo-500 transition">Contact Partnership Team</button>
             </div>
         </section>
     </main>
@@ -326,116 +269,9 @@
         </div>
     </div>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div id="privacyContent" class="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden text-gray-900 transition-all duration-300 scale-95 opacity-0 max-h-[90vh] flex flex-col">
-            <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50 flex-shrink-0">
-                <h3 class="text-xl font-black tracking-tight uppercase text-indigo-600">Privacy Policy</h3>
-                <button onclick="closePrivacy()" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path></svg>
-                </button>
-            </div>
-            <div class="p-8 overflow-y-auto prose prose-sm max-w-none">
-                <p class="text-xs font-bold text-gray-400 mb-6 italic text-right">Last updated: 2026/1/20</p>
-                <p class="mb-6">This website is provided for informational purposes. We respect your privacy and are committed to protecting the personal information you choose to share with us.</p>
-                
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">1. Information We Collect</h4>
-                <p>We only collect personal information when you voluntarily provide it to us through the “Contact Us” form. The information collected may include:</p>
-                <ul class="list-disc pl-5 space-y-1 mb-4">
-                    <li>Your email address</li>
-                    <li>Any information you choose to include in your message</li>
-                </ul>
-                <p>We do not require account registration, and we do not collect personal data for general website browsing.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">2. How We Use Your Information</h4>
-                <p>The information you provide is used solely for the purpose of:</p>
-                <ul class="list-disc pl-5 space-y-1 mb-4">
-                    <li>Responding to your inquiries</li>
-                    <li>Communicating with you regarding your request</li>
-                </ul>
-                <p>We do not use your email address for marketing purposes, and we do not send unsolicited communications.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">3. Data Sharing</h4>
-                <p>We do not sell, rent, or trade your personal information. Your information may be processed through third-party service providers (such as email or hosting services) strictly for the purpose of enabling communication. These providers are obligated to protect your data.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">4. Cookies and Analytics</h4>
-                <p>This website does not use cookies, analytics tools, or tracking technologies to identify or track visitors.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">5. Data Retention and Security</h4>
-                <p>We retain your contact information only for as long as necessary to respond to your inquiry or maintain communication. We take reasonable measures to protect the information you provide from unauthorized access or disclosure.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">6. Your Rights</h4>
-                <p>Depending on your location, you may have the right to:</p>
-                <ul class="list-disc pl-5 space-y-1 mb-4">
-                    <li>Request access to the personal information we hold about you</li>
-                    <li>Request correction or deletion of your personal information</li>
-                    <li>Withdraw your consent at any time</li>
-                </ul>
-                <p>To exercise these rights, please contact us via our partner inquiry form.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">7. Changes to This Privacy Policy</h4>
-                <p class="mb-8">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
-            </div>
-            <div class="p-4 border-t border-gray-100 bg-gray-50 flex justify-center flex-shrink-0">
-                <button onclick="closePrivacy()" class="px-8 py-2 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terms of Service Modal -->
-    <div id="termsModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div id="termsContent" class="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden text-gray-900 transition-all duration-300 scale-95 opacity-0 max-h-[90vh] flex flex-col">
-            <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50 flex-shrink-0">
-                <h3 class="text-xl font-black tracking-tight uppercase text-indigo-600">Terms of Service</h3>
-                <button onclick="closeTerms()" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path></svg>
-                </button>
-            </div>
-            <div class="p-8 overflow-y-auto prose prose-sm max-w-none">
-                <p class="text-xs font-bold text-gray-400 mb-6 italic text-right">Last updated: 2026/1/20</p>
-                <p class="mb-6 font-semibold">By accessing or using this website, you agree to be bound by these Terms of Service. If you do not agree with these terms, please do not use this website.</p>
-                
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">1. Use of the Website</h4>
-                <p>This website is provided for informational purposes only. You may use the website solely for lawful purposes and in accordance with these terms.</p>
-                <p>You agree not to:</p>
-                <ul class="list-disc pl-5 space-y-1 mb-4">
-                    <li>Use the website in any way that violates applicable laws or regulations</li>
-                    <li>Attempt to interfere with the proper functioning of the website</li>
-                    <li>Reproduce, distribute, or exploit any content on this website without prior written permission</li>
-                </ul>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">2. Intellectual Property</h4>
-                <p>All content on this website, including but not limited to text, graphics, logos, and design elements, is the property of <span class="font-bold">YULIANG Technology</span> and is protected by applicable intellectual property laws.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">3. Disclaimer</h4>
-                <p>The content provided on this website is for general informational purposes only. We make no warranties regarding the accuracy, completeness, or reliability of any content. Nothing on this website constitutes professional, legal, or financial advice.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">4. Limitation of Liability</h4>
-                <p>To the fullest extent permitted by law, <span class="font-bold">YULIANG Technology</span> shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of, or inability to use, this website.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">5. Third-Party Links</h4>
-                <p>This website may contain links to third-party websites. We are not responsible for the content, terms, or privacy practices of those websites.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">6. Changes to These Terms</h4>
-                <p>We may update these Terms of Service from time to time. Any changes will be posted on this page with an updated revision date.</p>
-
-                <h4 class="font-bold text-gray-900 mt-6 mb-2">7. Contact Us</h4>
-                <p class="mb-8">If you have any questions about these Terms of Service, please contact us via our partner inquiry form on this website.</p>
-            </div>
-            <div class="p-4 border-t border-gray-100 bg-gray-50 flex justify-center flex-shrink-0">
-                <button onclick="closeTerms()" class="px-8 py-2 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition">Close</button>
-            </div>
-        </div>
-    </div>
-
     <footer class="bg-gray-950 py-12 border-t border-gray-900 text-gray-500 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-2xl font-black text-white">YULIANG<span class="text-indigo-400">.</span></div>
-            <div class="flex space-x-8">
-                <button onclick="openPrivacy()" class="hover:text-white transition cursor-pointer">Privacy Policy</button>
-                <button onclick="openTerms()" class="hover:text-white transition cursor-pointer">Terms of Service</button>
-                <a href="#" class="hover:text-white transition">LinkedIn</a>
-            </div>
             <p>&copy; 2026 YULIANG Technology Co., Ltd. All rights reserved.</p>
         </div>
     </footer>
@@ -443,18 +279,12 @@
     <script>
         const modal = document.getElementById('partnerModal');
         const modalContent = document.getElementById('modalContent');
-        const privacyModal = document.getElementById('privacyModal');
-        const privacyContent = document.getElementById('privacyContent');
-        const termsModal = document.getElementById('termsModal');
-        const termsContent = document.getElementById('termsContent');
-        
         const contactForm = document.getElementById('contactForm');
         const successMsg = document.getElementById('successMessage');
         const errorMsg = document.getElementById('errorMessage');
 
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwxSRUTNQoCeG24MP-vmTY4e1iW4t-doYzPeSIF4kXVkGwKbx7_6m0yKOf3l1wF5wOv/exec';
 
-        // Partner Modal Logic
         function openModal() {
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -476,48 +306,8 @@
             }, 300);
         }
 
-        // Privacy Modal Logic
-        function openPrivacy() {
-            privacyModal.classList.remove('hidden');
-            privacyModal.classList.add('flex');
-            setTimeout(() => {
-                privacyContent.classList.remove('scale-95', 'opacity-0');
-                privacyContent.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        function closePrivacy() {
-            privacyContent.classList.add('scale-95', 'opacity-0');
-            privacyContent.classList.remove('scale-100', 'opacity-100');
-            setTimeout(() => {
-                privacyModal.classList.add('hidden');
-                privacyModal.classList.remove('flex');
-            }, 300);
-        }
-
-        // Terms Modal Logic
-        function openTerms() {
-            termsModal.classList.remove('hidden');
-            termsModal.classList.add('flex');
-            setTimeout(() => {
-                termsContent.classList.remove('scale-95', 'opacity-0');
-                termsContent.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        function closeTerms() {
-            termsContent.classList.add('scale-95', 'opacity-0');
-            termsContent.classList.remove('scale-100', 'opacity-100');
-            setTimeout(() => {
-                termsModal.classList.add('hidden');
-                termsModal.classList.remove('flex');
-            }, 300);
-        }
-
         window.onclick = function(event) {
             if (event.target === modal) closeModal();
-            if (event.target === privacyModal) closePrivacy();
-            if (event.target === termsModal) closeTerms();
         }
 
         contactForm.addEventListener('submit', (e) => {
@@ -525,28 +315,23 @@
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
-            successMsg.classList.add('hidden');
-            errorMsg.classList.add('hidden');
 
             const formData = new FormData(contactForm);
 
-            fetch(scriptURL, { 
-                method: 'POST', 
-                body: formData 
-            })
+            fetch(scriptURL, { method: 'POST', body: formData })
             .then(response => {
                 successMsg.classList.remove('hidden');
                 submitBtn.innerHTML = 'Message Sent!';
                 setTimeout(closeModal, 2500);
             })
             .catch(error => {
-                console.error('Error!', error.message);
                 errorMsg.classList.remove('hidden');
                 submitBtn.innerHTML = 'Retry';
                 submitBtn.disabled = false;
             });
         });
 
+        // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
